@@ -1,0 +1,44 @@
+{
+  "name": "File",
+  "fields": [
+    {
+      "fieldName": "path",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "file",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "staff",
+      "otherEntityRelationshipName": "profilePhoto",
+      "relationshipName": "staff"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "offer",
+      "otherEntityRelationshipName": "photo",
+      "relationshipName": "offer"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "product",
+      "otherEntityRelationshipName": "contractFiel",
+      "relationshipName": "product"
+    }
+  ],
+  "entityTableName": "file",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210617102408"
+}

@@ -1,0 +1,60 @@
+{
+  "name": "Product",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "productKind",
+      "fieldType": "ProductKind",
+      "fieldValues": "SERVICE,PRODUCT"
+    },
+    {
+      "fieldName": "remainCount",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "reservedCount",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "boughtCost",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "boughtAt",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "factureNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "productOrigin",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "file",
+      "otherEntityRelationshipName": "product",
+      "relationshipName": "contractFiel"
+    }
+  ],
+  "entityTableName": "product",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210617102413"
+}

@@ -42,7 +42,22 @@
     "jwtSecretKey": "NjIzNGFhNDMwYzU0ZTUzMGU4ODA5YTc3N2Y1ZDk2ODU2NGI5M2VhZGIxODMzZmUxYTJmZTMwYjc1YjY5YTIwNDViMjVlN2JjMWJiYjdjMjU2N2Q1NzVlNTQxYjFjZmFmZDk2NWQ3OTNiMzFjZWFlYTVhNGNlNGU3NzVmYjgyOWM=",
     "clientTheme": "none",
     "clientThemeVariant": "",
-    "reactive": false
+    "reactive": false,
+    "entities": [
+      "Company",
+      "UserComment",
+      "Tag",
+      "Staff",
+      "File",
+      "Note",
+      "Offer",
+      "Contract",
+      "ContractKind",
+      "Product",
+      "Facture",
+      "FactureItem"
+    ],
+    "lastLiquibaseTimestamp": 1623925455000
   },
   "git-provider": "GitHub",
   "git-company": "siavashsoleymani",

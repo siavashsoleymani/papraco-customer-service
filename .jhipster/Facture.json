@@ -1,0 +1,44 @@
+{
+  "name": "Facture",
+  "fields": [
+    {
+      "fieldName": "title",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "factureType",
+      "fieldType": "FactureType",
+      "fieldValues": "OFFICIAL,UNOFFICIAL"
+    },
+    {
+      "fieldName": "agreed",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "notification",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "checkedout",
+      "fieldType": "Boolean"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "company",
+      "otherEntityRelationshipName": "facture",
+      "relationshipName": "company"
+    }
+  ],
+  "entityTableName": "facture",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210617102414"
+}

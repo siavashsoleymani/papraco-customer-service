@@ -1,0 +1,134 @@
+entity Company {
+	name String,
+    email String,
+    phoneNumber String,
+    address String,
+    website String,
+    photo AnyBlob
+}
+
+entity UserComment{
+	comment String,
+    score Integer
+}
+
+entity Tag{
+	name String
+}
+
+entity Staff{
+	name String,
+    family String,
+    phoneNumber String,
+    email String,
+    desciption String 
+}
+
+entity File{
+	path String,
+    file AnyBlob
+}
+
+entity Note{
+	note TextBlob
+}
+
+entity Offer{
+	title String,
+    body TextBlob,
+    offerType OfferType,
+    notifInterval Long,
+}
+
+enum OfferType{
+	ADVICE,
+    OFFER
+}
+
+entity Contract{
+    body TextBlob,
+    agreed Boolean
+}
+
+entity ContractKind{
+	name String
+}
+
+entity Product{
+	name String,
+    productKind ProductKind,
+    remainCount Long,
+    reservedCount Long,
+    boughtCost BigDecimal,
+    boughtAt Instant,
+    factureNumber String,
+    description String,
+    productOrigin String
+}
+
+enum ProductKind{
+	SERVICE,
+    PRODUCT
+}
+
+entity Facture{
+    title String,
+    factureType FactureType,
+    agreed Boolean,
+    notification String,
+    checkedout Boolean
+}
+
+entity FactureItem{
+	description String,
+    count Integer,
+    measureType MeasureType,
+    amount BigDecimal,
+    totalAmount BigDecimal,
+    discount BigDecimal,
+    tax BigDecimal
+}
+
+enum MeasureType{
+	NUMBER,
+    KILO,
+    MONTH
+}
+
+enum FactureType{
+	OFFICIAL,
+    UNOFFICIAL
+}
+
+relationship ManyToMany {
+    Company{tag} to Tag{company}
+}
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	Company{staff} to Staff{company}
+    Company{offer} to Offer{company}
+    Company{contract} to Contract{company}
+    Company{facture} to Facture{company}
+    Staff{note} to Note{Staff}
+    Staff{profilePhoto} to File{staff}
+    Offer{photo} to File{offer}
+    Product{contractFiel} to File{product}
+    Company{userComment} to UserComment{company}
+}
+
+relationship ManyToOne{
+	ContractKind{contract} to Contract{contractKind}
+}
+
+// Set pagination options
+paginate all with pagination
+
+// Use Data Transfer Objects (DTO)
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
