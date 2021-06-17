@@ -1,0 +1,27 @@
+{
+  "name": "ContractKind",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "contract",
+      "otherEntityRelationshipName": "contractKind",
+      "relationshipName": "contract"
+    }
+  ],
+  "entityTableName": "contract_kind",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210617102412"
+}

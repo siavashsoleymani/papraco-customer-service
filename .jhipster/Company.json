@@ -1,0 +1,79 @@
+{
+  "name": "Company",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "phoneNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "address",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "website",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "photo",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "staff",
+      "otherEntityRelationshipName": "company",
+      "relationshipName": "staff"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "offer",
+      "otherEntityRelationshipName": "company",
+      "relationshipName": "offer"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "contract",
+      "otherEntityRelationshipName": "company",
+      "relationshipName": "contract"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "facture",
+      "otherEntityRelationshipName": "company",
+      "relationshipName": "facture"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "userComment",
+      "otherEntityRelationshipName": "company",
+      "relationshipName": "userComment"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "tag",
+      "otherEntityRelationshipName": "company",
+      "relationshipName": "tag",
+      "ownerSide": true
+    }
+  ],
+  "entityTableName": "company",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210617102404"
+}

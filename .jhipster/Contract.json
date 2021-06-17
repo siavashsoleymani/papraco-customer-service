@@ -1,0 +1,38 @@
+{
+  "name": "Contract",
+  "fields": [
+    {
+      "fieldName": "body",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    },
+    {
+      "fieldName": "agreed",
+      "fieldType": "Boolean"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "company",
+      "otherEntityRelationshipName": "contract",
+      "relationshipName": "company"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "contractKind",
+      "otherEntityRelationshipName": "contract",
+      "relationshipName": "contractKind"
+    }
+  ],
+  "entityTableName": "contract",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210617102411"
+}
